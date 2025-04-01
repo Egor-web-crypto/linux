@@ -1,4 +1,4 @@
-#*DOCKER COMPOSE*
+# *DOCKER COMPOSE*
 
 ![image](https://github.com/user-attachments/assets/79a188a0-855b-49bf-b98c-d1fe53a97937)
 
@@ -73,7 +73,7 @@
 ![image](https://github.com/user-attachments/assets/81e018b7-9517-4173-9be9-7a747cb3eb38)
 
 
-#*GRAFANA*
+# *GRAFANA*
 
 - вход в графану `localhost:3000`
 
