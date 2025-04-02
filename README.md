@@ -106,3 +106,51 @@
 ![image](https://github.com/user-attachments/assets/08cab9fe-8393-4a55-82fe-15491dd79019)
 
 
+Виктория Метрикс
+
+- Захожу в графану и устанавливаю новое подключение с портом `8428`
+
+  ![image](https://github.com/user-attachments/assets/6ddf2ea3-c630-4e73-b322-e4e51bded422)
+
+-Выбираю режим кода и вставляю параметр запроса `OILCOINT_metric1`
+
+![image](https://github.com/user-attachments/assets/027bc7c6-2fb1-405b-a0fe-d56c947f42d4)
+
+-Успешное подключение
+
+![image](https://github.com/user-attachments/assets/0670bc78-e89e-4243-9441-ae6ce5334c3d)
+
+-Дальше ввожу две команды
+
+`echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 42" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus`
+
+Эта команда выполняет следующие шаги:
+
+echo -e — вывод текста с экранированными символами (в данном случае новая строка \n).
+Строка "# TYPE OILCOINT_metric1 gauge" определяет тип метрики (gauge) в формате Prometheus.
+Следующая строка "OILCOINT_metric1 42" задаёт значение метрики.
+| — перенаправление вывода echo в команду curl.
+curl --data-binary @- — отправка данных через HTTP POST-запрос. Флаг --data-binary используется для передачи бинарных данных, а @- означает чтение данных из стандартного ввода (в нашем случае это результат работы echo).
+http://localhost:8428/api/v1/import/prometheus — конечный адрес, куда отправляются данные. Это путь для импорта метрик в систему мониторинга Prometheus.
+Эта команда отправляет метрику OILCOINT_metric1 с типом gauge и значением 42 на локальный сервер Prometheus
+
+
+`curl -G 'http://localhost:8428/api/v1/query' --data-urlencode 'query=OILCOINT_metric1'`
+
+Здесь происходит следующее:
+
+curl -G — использование метода GET для отправки запроса. Параметр -G подразумевает преобразование всех переданных данных в параметры строки запроса.
+'http://localhost:8428/api/v1/query' — адрес сервера Prometheus, к которому отправляется запрос.
+--data-urlencode 'query=OILCOINT_metric1' — параметр запроса, который кодирует строку запроса. В данном случае мы запрашиваем значение метрики OILCOINT_metric1.
+
+![image](https://github.com/user-attachments/assets/8d37f322-2550-42e2-8b1b-cfdd5c5daae6)
+
+Результат в графане
+
+![image](https://github.com/user-attachments/assets/e369b6cb-bdb3-4cc5-ae2f-ab5efb63a874)
+
+Результат в виктории метрикс
+
+![image](https://github.com/user-attachments/assets/4e3a70c2-378b-4ec1-a04e-b32bf1d218a7)
+
+
