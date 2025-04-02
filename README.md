@@ -112,11 +112,11 @@
 
   ![image](https://github.com/user-attachments/assets/6ddf2ea3-c630-4e73-b322-e4e51bded422)
 
--Выбираю режим кода и вставляю параметр запроса `OILCOINT_metric1`
+- Выбираю режим кода и вставляю параметр запроса `OILCOINT_metric1`
 
 ![image](https://github.com/user-attachments/assets/027bc7c6-2fb1-405b-a0fe-d56c947f42d4)
 
--Успешное подключение
+- Успешное подключение
 
 ![image](https://github.com/user-attachments/assets/0670bc78-e89e-4243-9441-ae6ce5334c3d)
 
