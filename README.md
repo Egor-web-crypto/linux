@@ -120,7 +120,7 @@
 
 ![image](https://github.com/user-attachments/assets/0670bc78-e89e-4243-9441-ae6ce5334c3d)
 
--Дальше ввожу две команды
+- Дальше ввожу две команды
 
 `echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 42" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus`
 
